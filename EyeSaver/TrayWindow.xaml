@@ -1,0 +1,75 @@
+﻿<Window x:Class="EyeSaver.TrayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EyeSaver"
+        mc:Ignorable="d"
+        Title="EyeSaver" MinWidth="360" SizeToContent="WidthAndHeight"
+        TextOptions.TextRenderingMode="Auto" TextOptions.TextFormattingMode="Ideal"
+        WindowStartupLocation="CenterScreen" Style="{DynamicResource Q_Tray_Window}">
+
+  <Border Style="{DynamicResource Q_Tray_Border}">
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" MinHeight="100" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Border Name="HeaderBar" Grid.Row="0" MouseDown="WindowHeader_MouseDown" Background="Transparent"
+              CornerRadius="2,2,0,0" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource WindowBorderBrush3}">
+
+        <DockPanel DockPanel.Dock="Top" Margin="7,7">
+
+          <DockPanel DockPanel.Dock="Left">
+            <Image DockPanel.Dock="Left" VerticalAlignment="Center" Source="/icon.ico" Height="30" Margin="0, 0, 7, 0" />
+            <DockPanel DockPanel.Dock="Top">
+              <TextBlock Name="WindowTitle" DockPanel.Dock="Left" FontSize="21" FontWeight="Bold" Margin="0,-4,0,0"
+                         VerticalAlignment="Center" Style="{DynamicResource Main_Title}">
+                EyeSaver
+              </TextBlock>
+            </DockPanel>
+          </DockPanel>
+
+          <DockPanel DockPanel.Dock="Right" Height="25" VerticalAlignment="Center" HorizontalAlignment="Right">
+            <TextBlock Text="&#x2013;" Width="18" Height="18" FontFamily="Arial" Style="{DynamicResource Icon_Button}"
+                       FontWeight="Bold" FontSize="18" Margin="0,0,8,0" MouseUp="WindowMinimize"
+                       MouseDown="WindowMinimize" />
+
+            <TextBlock Text="&#205;" Width="18" Height="18" FontFamily="Wingdings 2"
+                       Style="{DynamicResource Icon_Button}"
+                       FontWeight="Bold" FontSize="18" MouseUp="WindowClose" MouseDown="WindowClose" />
+
+          </DockPanel>
+          <CheckBox x:Name="CheckBox_Enabled" VerticalAlignment="Center" Margin="20,0,0,0" Content="Enabled" />
+        </DockPanel>
+      </Border>
+      <Border Grid.Row="2" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource WindowBorderBrush2}" />
+
+      <ListView x:Name="DisplayList" Grid.Row="2" SelectionMode="Single" Background="Transparent"
+                Margin="2,4" BorderThickness="0" />
+
+      <Border Grid.Row="3" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource WindowBorderBrush3}" />
+
+      <Border Grid.Row="4" CornerRadius="0,0,2,2" BorderThickness="0,1,0,0"
+              BorderBrush="{DynamicResource WindowBorderBrush2}">
+        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,0,1">
+          <Button x:Name="btn_default" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center"
+                  MinWidth="70" Content="Default" Margin="5" />
+          <Button x:Name="btn_restore" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center"
+                  MinWidth="70" Content="Restore" Margin="5" />
+          <Button x:Name="btn_save" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center"
+                  MinWidth="70" Content="Save" />
+        </DockPanel>
+      </Border>
+
+
+    </Grid>
+
+  </Border>
+
+</Window>
