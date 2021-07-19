@@ -3,7 +3,7 @@
 Experimental app to change gamma ramps on windows.
 
 
-![print](https://user-images.githubusercontent.com/2568375/126100155-7fee6487-2fe4-4b5e-bec2-669923c7d7e0.png)
+![print](https://user-images.githubusercontent.com/2568375/126102609-ca1cf8a6-db54-47cc-8a99-0ea8acebe41b.png)
 
 
 ### Code
