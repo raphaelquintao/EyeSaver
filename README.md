@@ -7,6 +7,6 @@ Experimental app to change gamma ramps on windows.
 
 
 ### Code
-This old code was my first play with C#, back in 2018.
+This app was made back in 2018.
 
 By the way, it's still working pretty well until today. 
